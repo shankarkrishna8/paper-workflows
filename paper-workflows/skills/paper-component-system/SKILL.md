@@ -55,13 +55,27 @@ All component instances in Paper **must** use bracket-prefixed layer names:
 **Detached instance** (one-off, excluded from future syncs): rename without brackets:
 - `Button-Primary-HeroSection`, `Card-Featured`
 
+**Showcase wrappers are not components.** When a component is placed on a library artboard alongside a label or annotation (e.g. "PRIMARY", "DISABLED"), the outer container grouping both is a presentation wrapper — it must NOT receive a bracket name. Only the actual component node inside it does:
+
+```
+✅ correct:
+  Button-Primary          ← plain wrapper name
+    [Button-Primary]      ← component node (synced, tracked)
+    Primary               ← label text
+
+❌ wrong:
+  [Button-Primary]        ← wrapper incorrectly gets the bracket name
+    Button                ← actual component, unnamed and untracked
+    Primary               ← label text
+```
+
 ---
 
 ## Creating a Component
 
 1. Call `get_font_family_info` before any typography (once per session)
 2. Use `write_html` to place the component on the target artboard
-3. Name the root node `[ComponentName]`
+3. Name the component node itself `[ComponentName]` — this is the actual reusable element, not any outer showcase wrapper. If the component sits inside a presentation container (e.g. grouped with a state label beneath it), the bracket name goes on the component node only; give the outer wrapper a plain name like `Button-Primary`.
 4. Save master HTML to `components/ComponentName.html`
 5. Register in `manifest.json`:
 
