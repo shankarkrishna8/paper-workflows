@@ -1,0 +1,17 @@
+{
+  "name": "paper-workflows",
+  "owner": {
+    "name": "Shankar Krishna"
+  },
+  "metadata": {
+    "description": "Reusable component system workflows for Paper Design — creation, sync, multi-page tracking, and design↔code exchange.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "paper-workflows",
+      "source": "./paper-workflows",
+      "description": "Component system workflows for Paper Design: create, sync, track instances, and exchange with code."
+    }
+  ]
+}
