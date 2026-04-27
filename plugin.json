@@ -1,0 +1,11 @@
+{
+  "name": "paper-workflows",
+  "version": "1.0.0",
+  "description": "Reusable component system workflows for Paper Design — creation, sync, multi-page tracking, and design↔code exchange.",
+  "author": {
+    "name": "Shankar Krishna",
+    "url": "https://github.com/shankarkrishna8"
+  },
+  "license": "MIT",
+  "skills": "./skills"
+}
